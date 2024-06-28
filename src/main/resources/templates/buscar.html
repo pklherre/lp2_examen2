@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Empleado</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Detalle del Empleado</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Información del Empleado</h5>
+            <p class="card-text"><strong>DNI:</strong> <span th:text="${empleado.dniEmpleado}"></span></p>
+            <p class="card-text"><strong>Nombre:</strong> <span th:text="${empleado.nombreEmpleado}"></span></p>
+            <p class="card-text"><strong>Apellido:</strong> <span th:text="${empleado.apellidoEmpleado}"></span></p>
+            <p class="card-text"><strong>Fecha de Nacimiento:</strong> <span th:text="${empleado.fechaNacimiento}"></span></p>
+            <p class="card-text"><strong>Dirección:</strong> <span th:text="${empleado.direccion}"></span></p>
+            <p class="card-text"><strong>Área:</strong> <span th:text="${empleado.area.nombre_area}"></span></p>
+            <a href="/empleados" class="btn btn-primary">Volver a la Lista</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

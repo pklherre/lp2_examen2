@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Empleado</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Editar Empleado</h2>
+    <form th:action="@{/editar_empleado}" th:object="${empleado}" method="post">
+        <div class="form-group">
+            <label for="dniEmpleado">DNI</label>
+            <input type="text" class="form-control" id="dniEmpleado" th:field="*{dniEmpleado}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="nombreEmpleado">Nombre</label>
+            <input type="text" class="form-control" id="nombreEmpleado" th:field="*{nombreEmpleado}" required>
+        </div>
+        <div class="form-group">
+            <label for="apellidoEmpleado">Apellido</label>
+            <input type="text" class="form-control" id="apellidoEmpleado" th:field="*{apellidoEmpleado}" required>
+        </div>
+        <div class="form-group">
+            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="fechaNacimiento" th:field="*{fechaNacimiento}" required>
+        </div>
+        <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input type="text" class="form-control" id="direccion" th:field="*{direccion}" required>
+        </div>
+        <div class="form-group">
+            <label for="area">Área</label>
+            <select class="form-control" id="area" th:field="*{area}" required>
+                <option th:each="area : ${areas}" th:value="${area.areaId}" th:text="${area.nombre_area}"></option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="/empleados" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
